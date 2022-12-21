@@ -1,4 +1,4 @@
-# odin-admin-dashboard
+# Odin Admin Dashboard
 
 In this project I will be creating a full admin dashboard design using CSS. This is part of The Odin Projects' Intermediate HTML and CSS Course.
 
