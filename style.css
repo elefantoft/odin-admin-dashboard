@@ -1,3 +1,11 @@
+:root {
+    /* Color-palette */
+    --beige: rgb(252, 248, 232);
+    --teal: rgb(212, 226, 212);
+    --peach: rgb(236, 179, 144);
+    --red: rgb(223, 120, 97);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,14 +19,10 @@
     grid-template-rows: 1fr 4fr;
 }
 
-.container > div {
-    border: 2px solid blue;
-}
-
 .sidebar {
     grid-row: span 2;
     padding: 20px;
-    background-color: lightblue;
+    background-color: var(--peach);
     display: grid;
     align-content: start;
     gap: 50px;
@@ -31,6 +35,7 @@
 
 .header {
     display: grid;
+    background-color: var(--beige);
     align-items: center;
     grid-template-columns: 2fr 1fr;
 }
@@ -57,7 +62,7 @@
 }
 
 .main-content {
-    background-color: lightgray;
+    background-color: var(--teal);
     display: grid;
     grid-template-columns: 3fr 1fr;
 }
