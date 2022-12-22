@@ -1,15 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap');
+
 :root {
     /* Color-palette */
-    --beige: rgb(252, 248, 232);
-    --teal: rgb(212, 226, 212);
-    --peach: rgb(236, 179, 144);
-    --red: rgb(223, 120, 97);
+    --red: rgb(235, 69, 95);
+    --white: rgb(252, 255, 231);
+    --blue: rgb(188, 215, 233);
+    --navy: rgb(43, 52, 103);
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .container {
@@ -21,55 +32,116 @@
 
 .sidebar {
     grid-row: span 2;
-    padding: 20px;
-    background-color: var(--peach);
+    padding: 2rem;
+    background-color: var(--navy);
     display: grid;
     align-content: start;
-    gap: 50px;
+    gap: 5rem;
+    color: var(--white);
 }
 
 .sidebar > div {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    grid-template-columns: 1fr 5fr;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.sidebar > div > svg {
+    fill: var(--white);
+    height: 1.4rem;
+    width: auto;
+}
+
+.sidebar > div:first-child {
+    font-size: 2rem;
+}
+
+.sidebar > div:first-child > svg {
+    height: 3rem;
+    width: auto;
 }
 
 .header {
     display: grid;
-    background-color: var(--beige);
-    align-items: center;
+    background-color: var(--white);
     grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 1rem 3rem 1rem 3rem;
 }
 
 .header > div {
     display: grid;
+    align-items: center;
 }
 
 .search {
-    grid-template-columns: 1fr 10fr;
+    display: grid;
+    grid-template-columns: 0.5fr 10fr;
+}
+
+.search > svg {
+    height: 2rem;
+}
+
+input[type="search"] {
+    height: 2rem;
+    width: 90%;
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--blue);
 }
 
 .user {
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
+    display: flex;
+    grid-template-columns: 1fr 0.2fr 1fr;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.user > svg {
+    height: 2rem;
+    justify-self: end;
+}
+
+.user > img {
+    height: 4rem;
+    width: auto;
 }
 
 .welcome {
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 10fr;
 }
 
 .buttons {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 0.2fr 1fr;
+    justify-items: center;
+}
+
+.buttons > button {
+    background-color: var(--navy);
+    color: var(--white);
+    font-size: 1rem;
+    border: none;
+    border-radius: 3rem;
+    width: 7rem;
+    height: 2.5rem;
 }
 
 .main-content {
-    background-color: var(--teal);
+    background-color: var(--blue);
     display: grid;
     grid-template-columns: 3fr 1fr;
 }
 
 .projects, .highlights {
-    margin: 20px;
-    height: 90%
+    margin: 1.5rem;
+    height: 90%;
+}
+
+.projects > h3 {
+    margin-bottom: 0.5rem;
 }
 
 .card-container {
@@ -79,11 +151,29 @@
 }
 
 .card {
+    position: relative;
+    background-color: var(--white);
     height: 200px;
     border: 1px solid black;
     display: grid;
     grid-template-rows: 3fr 1fr;
     align-items: center;
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    border-left: 0.8rem solid var(--red);
+    box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.4);
+}
+
+.card > div > svg {
+    height: 1.5rem;
+}
+
+.card > div:last-child {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-self: end;
 }
 
 .announce-box, .trending-box {
@@ -112,4 +202,8 @@
 .trending-box > div {
     display: grid;
     grid-template-columns: 1fr 2fr;
+}
+
+.card:hover {
+    top: -2px;
 }
