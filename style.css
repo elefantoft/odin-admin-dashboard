@@ -143,18 +143,18 @@ input[type="search"] {
 
 .projects > h3, .highlights > div > h3 {
     margin-bottom: 0.5rem;
-    border: 2px solid red;
 }
 
 .card-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 2rem;
 }
 
 .card {
     position: relative;
-    height: 200px;
+    height: 13rem;
+    width: 22rem;
     display: grid;
     grid-template-rows: 3fr 1fr;
     align-items: center;
@@ -175,36 +175,55 @@ input[type="search"] {
 .highlights {
     display: grid;
     grid-template-rows: 1fr 1fr;
-    gap: 20px;
+    gap: 2rem;
+}
+
+.ann-box, .tren-box {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .card, .announce-box, .trending-box {
     background-color: var(--white);
-    padding: 1rem;
+    padding: 1.5rem;
     border-radius: 0.5rem;
     box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.4);
 }
 
 .announce-box {
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    font-size: 0.9rem;
 }
 
 .announce-box > div:nth-child(2) {
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 2px solid var(--blue);
+    border-bottom: 2px solid var(--blue);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .trending-box {
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    border: 2px solid red;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .trending-box > div {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+}
+
+.trending-box > div > img {
+    height: 80%;
 }
 
 .card:hover {
