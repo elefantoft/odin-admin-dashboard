@@ -16,6 +16,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: var(--blue);
 }
 
 a {
@@ -31,13 +32,13 @@ a {
 }
 
 .sidebar {
-    grid-row: span 2;
-    padding: 2rem;
     background-color: var(--navy);
+    color: var(--white);
+    padding: 2rem;
+    grid-row: span 2;
     display: grid;
     align-content: start;
     gap: 5rem;
-    color: var(--white);
 }
 
 .sidebar > div {
@@ -56,6 +57,7 @@ a {
 
 .sidebar > div:first-child {
     font-size: 2rem;
+    display: flex;
 }
 
 .sidebar > div:first-child > svg {
@@ -64,11 +66,14 @@ a {
 }
 
 .header {
-    display: grid;
     background-color: var(--white);
+    display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
     padding: 1rem 3rem 1rem 3rem;
+    box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.4);
+    column-gap: 3rem;
+    white-space: nowrap;
 }
 
 .header > div {
@@ -77,67 +82,75 @@ a {
 }
 
 .search {
-    display: grid;
-    grid-template-columns: 0.5fr 10fr;
+    grid-template-columns: minmax(3rem, 0.5fr) 10fr;
 }
 
 .search > svg {
     height: 2rem;
+    width: auto;
 }
 
 input[type="search"] {
     height: 2rem;
-    width: 90%;
+    width: 100%;
     border: none;
     border-radius: 2rem;
     background-color: var(--blue);
-    text-align: left;
+    padding-left: 1rem;
+    font-size: 1rem;
 }
 
 .user {
-    display: flex;
     grid-template-columns: 1fr 0.2fr 1fr;
     justify-content: center;
     gap: 2rem;
 }
 
-.user > svg {
-    height: 2rem;
+.user > a:first-child {
     justify-self: end;
 }
 
-.user > img {
+.user > a > svg {
+    height: 2rem;
+}
+
+.user > a > img {
     height: 4rem;
     width: auto;
 }
 
 .welcome {
     grid-template-columns: 1fr 10fr;
+    gap: 0.5rem;
 }
 
 .buttons {
     grid-template-columns: 1fr 0.2fr 1fr;
     justify-items: center;
+    gap: 0.5rem;
 }
 
 .buttons > button {
     background-color: var(--navy);
     color: var(--white);
-    font-size: 1rem;
+    font-size: 1.2rem;
     border: none;
     border-radius: 3rem;
     width: 7rem;
     height: 2.5rem;
 }
 
+.buttons > button:hover {
+    background-color:  rgb(43, 52, 103, 0.8);
+}
+
 .main-content {
-    background-color: var(--blue);
     display: grid;
     grid-template-columns: 3fr 1fr;
 }
 
 .projects, .highlights {
-    margin: 1.5rem;
+    padding: 2rem;
     height: 90%;
 }
 
@@ -147,14 +160,14 @@ input[type="search"] {
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 2rem;
 }
 
 .card {
     position: relative;
     height: 13rem;
-    width: 22rem;
+    width: auto;
     display: grid;
     grid-template-rows: 3fr 1fr;
     align-items: center;
@@ -178,21 +191,20 @@ input[type="search"] {
     gap: 2rem;
 }
 
-.ann-box, .tren-box {
-    height: 100%;
-    width: 100%;
+.announce-box, .trending-box {
+    width: max(15rem, 100%);
     display: flex;
     flex-direction: column;
 }
 
-.card, .announce-box, .trending-box {
+.card, .announce-box > div, .trending-box > div {
     background-color: var(--white);
     padding: 1.5rem;
     border-radius: 0.5rem;
     box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.4);
 }
 
-.announce-box {
+.announce-box > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -200,7 +212,7 @@ input[type="search"] {
     font-size: 0.9rem;
 }
 
-.announce-box > div:nth-child(2) {
+.announce-box > div > a:nth-child(2) {
     border-top: 2px solid var(--blue);
     border-bottom: 2px solid var(--blue);
     padding-top: 1rem;
@@ -209,20 +221,20 @@ input[type="search"] {
     margin-bottom: 1rem;
 }
 
-.trending-box {
+.trending-box > div {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
 
-.trending-box > div {
+.trending-box > div > a {
     display: grid;
     grid-template-columns: 1fr 3fr;
     align-items: center;
 }
 
-.trending-box > div > img {
+.trending-box > div > a > img {
     height: 80%;
 }
 
